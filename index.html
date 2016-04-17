@@ -10,23 +10,34 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-  <style>
-    .overlay {
-      background: grey;
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      opacity: .6;  
-    }
-  </style>
+
 </head>
 <body>
 
-  <div id="index-banner" class="parallax-container">
+  <div id="navbar" class="navbar-fixed" style="display:none;">
+    <nav class="white" style="opacity: .7;">
+      <div class="nav-wrapper" style="padding-left:50px; padding-right:50px;">
+        <a href="index.html" class="brand-logo">
+          <img width="30px;" style="vertical-align: -8%" src="img/logo.png">
+          <strong>GDG Coimbra</strong>
+        </a>
+        <ul class="right hide-on-med-and-down">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="events.html">Events</a></li>
+        </ul>
+
+        <ul id="nav-mobile" class="side-nav">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="events.html">Events</a></li>
+        </ul>
+        <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+      </div>
+    </nav>
+  </div>
+
+  <div id="index-banner" class="parallax-container" style="min-height:800px;">
     <div class="section no-pad-bot">
-      <div class="container">
+      <div class="container" style="margin-top: 200px;">
         <br><br>
         <h1 class="header center light">
           <div class="valign">
@@ -43,16 +54,13 @@
       </div>
     </div>
     <div class="parallax">
-      <img src="img/coimbra5.jpg">
+      <img class="fullScreen" src="img/coimbra5.jpg">
       <div class="overlay"></div>
     </div>
   </div>
 
-
   <div class="container">
     <div class="section">
-
-      <!--   Icon Section   -->
       <div class="row">
         <div class="col s12 m4">
           <div class="icon-block" style="height:210px;">
@@ -60,7 +68,7 @@
             <p class="light">Follow the GDG Coimbra on <strong style="color:#DC4E41">Google+</strong> to keep updated with our events and activities.</p>
           </div>
           <div class="center">
-            <button class="btn waves-effect" style="background-color:#DC4E41" onclick="window.open('https://plus.google.com/+GDGCoimbra')" type="submit" name="action">
+            <button class="btn waves-effect" style="min-width:120px; background-color:#DC4E41" onclick="window.open('https://plus.google.com/+GDGCoimbra')" type="submit" name="action">
               Follow
             </button>
           </div>
@@ -72,7 +80,7 @@
             <p class="light">Join GDG Coimbra <strong style="color:#03A25B">community</strong> to take part of our backstage activities and to communicate with our members.</p>
           </div>
           <div class="center">
-            <button class="btn waves-effect" style="background-color:#03A25B" onclick="window.open('https://plus.google.com/communities/107740767974916449393')" type="submit" name="action">
+            <button class="btn waves-effect" style="min-width:120px; background-color:#03A25B" onclick="window.open('https://plus.google.com/communities/107740767974916449393')" type="submit" name="action">
               Join
             </button>
           </div>
@@ -84,15 +92,32 @@
             <p class="light">Become a member by clicking on the <strong style="color:#4F92F9">"I'm a member"</strong> button directly at the official Google Developer page!</p>
           </div>
           <div class="center">
-            <button class="btn waves-effect" style="background-color:#4F92F9" onclick="window.open('https://developers.google.com/groups/chapter/103689036662302611912/')" type="submit" name="action">
+            <button class="btn waves-effect" style="min-width:120px; background-color:#4F92F9" onclick="window.open('https://developers.google.com/groups/chapter/103689036662302611912/')" type="submit" name="action">
               Enroll
             </button>
           </div>
         </div>
       </div>
+    </div>
 
+    <div class="section" style="margin-top: 50px;">
+      <div class="row">
+        <div class="col s12 m4">
+          <div class="icon-block" style="height:210px;">
+            <h2 class="center blue-grey-text lighten-3"><i class="material-icons">today</i></h2>
+            <p class="light"> Check out our awesome events to learn more about Google technologies from Google enthusiastics.</p>
+          </div>
+          <div class="center">
+            <button class="btn waves-effect" style="min-width:120px; background-color:#F8C35A" onclick="window.location.href='events.html'" type="submit" name="action">
+              Events
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
+
+  <div id="map"></div>
 
   <footer class="page-footer blue-grey lighten-3">
     <div class="container">
@@ -126,6 +151,33 @@
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script src="js/materialize.js"></script>
   <script src="js/init.js"></script>
+  <script>
+    $(window).scroll(function() {
+      if ($(window).scrollTop() > 100) {
+        $("#navbar").fadeIn(500);
+      }
+      else {
+        $("#navbar").hide();
+      }
+    });
+  </script>
+  <script>
+    function initMap() {
+      var myLatLng = {lat: 40.2, lng: -8.4166667};
 
+      var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 12,
+        center: myLatLng,
+        scrollwheel: false
+      });
+
+      var marker = new google.maps.Marker({
+        position: myLatLng,
+        map: map,
+        title: 'Coimbra'
+      });
+    }
+  </script>
+  <script src="https://maps.googleapis.com/maps/api/js?callback=initMap" async defer></script>
   </body>
 </html>
