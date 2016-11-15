@@ -1,0 +1,151 @@
+.content {
+  max-width: 1280px;
+  @include margin(null auto null auto);
+}
+
+.main {
+  @include margin(null auto null auto);
+  max-width: 1280px;
+
+  .grid {
+    @include respond-to('screen-sm') {
+      @include display(flex);
+      @include flex-direction(row);
+      @include flex-wrap(wrap);
+    }
+
+    &-100 {
+      width: 100%;
+
+      .grid-content {
+        @include padding(100px 30px 100px 30px);
+
+        &.promo {
+          @include padding(0 0 0 0);
+
+          img {
+            width: 100%;
+            height: auto;
+          }
+        }
+      }
+    }
+
+    &-50 {
+      position: relative;
+      width: 50%;
+      @include transition-duration(.2s);
+
+      &:hover {
+        box-shadow: 0 0 20px 0 rgba(0, 0, 0, .2), 0 5px 5px 0 rgba(0, 0, 0, .24);
+      }
+
+      &:before {
+        content: "";
+        display: block;
+        padding-top: 100%;
+      }
+
+      @include respond-to('screen-xs') {
+        width: 100%;
+      }
+
+      a {
+        color: $black;
+
+        .square-footer {
+          position: absolute;
+          bottom: 15px;
+          display: inline-block;
+          @include size(calc(100% - 60px) null);
+          @include padding(15px null 15px null);
+          font-family: 'Roboto Mono', monospace;
+
+          p {
+            float: left;
+          }
+
+          svg {
+            float: right;
+            margin-top: 2px;
+            width: auto;
+            height: 20px;
+            opacity: .7;
+          }
+        }
+
+        .grid-content {
+          @include position(absolute, 0 0 0 0);
+          @include padding(30px 30px 30px 30px);
+          background-repeat: no-repeat;
+          background-position: center center;
+          background-size: auto 50%;
+
+          &__events {
+            background-color: transparent;
+            background-image: url("../images/events.jpeg");
+            background-size: cover;
+            background-position: center center;
+            color: $white;
+          }
+
+          &__follow {
+            background-color: transparent;
+            background-image: url("../images/members.png");
+            background-size: cover;
+            background-position: center bottom;
+          }
+
+          &__location {
+            background-color: transparent;
+            background-image: url("../images/coimbra.jpg");
+            background-size: cover;
+            background-position: center center;
+          }
+
+          &__about {
+            background-color: transparent;
+            background-image: url("../images/about.png");
+            background-size: cover;
+            background-position: center center;
+            color: $white;
+          }
+
+          h2 {
+            margin-bottom: 5px;
+          }
+        }
+      }
+    }
+
+    &-yellow {
+      background-color: $yellow;
+    }
+
+    &-orange {
+      background-color: $orange;
+      color: $white;
+
+      a {
+        color: $white !important;
+
+        svg {
+          fill: $white;
+        }
+      }
+    }
+
+    &-green {
+      background-color: $green;
+    }
+
+    &-grey {
+      background-color: $grey;
+    }
+
+    &-darkgrey {
+      background-color: $dark-grey;
+      color: $white;
+    }
+  }
+}

@@ -1,0 +1,17 @@
+.header {
+  background-color: $blue;
+  @include padding(104px 30px 50px 30px);
+  z-index: 1;
+
+  @include respond-to('screen-sm') {
+    h1 {
+      max-width: 70%;
+    }
+  }
+
+  &-events {
+    h1 {
+      font-size: em(60px);
+    }
+  }
+}

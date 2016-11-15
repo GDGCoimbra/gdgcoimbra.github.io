@@ -1,0 +1,63 @@
+@import "vendor/bourbon";
+@import "partials/reset";
+@import "partials/mixins";
+@import "modules/colors";
+@import "partials/typography";
+@import "modules/grid";
+@import "partials/nav";
+@import "partials/header";
+@import "partials/events";
+
+body {
+  background-color: $light-grey;
+  font-family: $base-font-family;
+  font-weight: $base-font-weight;
+  font-style: $base-font-style;
+  font-size: $base-font-size;
+  color: $black;
+  -webkit-font-smoothing: antialiased;
+}
+
+footer {
+  overflow: auto;
+  background-color: $white;
+  @include padding(null 30px null 30px);
+
+  p {
+    @include respond-to('screen-xs') {
+      @include margin(20px auto 20px auto);
+      width: 70%;
+      text-align: center;
+    }
+
+    @include respond-to('screen-sm') {
+      float: left;
+      width: 50%;
+      @include margin(50px null 50px null);
+    }
+  }
+
+  ul {
+    overflow: hidden;
+
+    @include respond-to('screen-xs') {
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    @include respond-to('screen-sm') {
+      float: right;
+      margin-top: 50px;
+    }
+
+    li {
+      display: inline;
+      @include margin(null 10px null 10px);
+
+      img {
+        width: auto;
+        height: 25px;
+      }
+    }
+  }
+}
