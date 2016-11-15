@@ -1,0 +1,81 @@
+ol.events {
+  @include margin(null auto null auto);
+  max-width: 760px;
+
+  li {
+    margin-bottom: 40px;
+
+    &:last-child {
+      margin-bottom: 0;
+
+      a div.event-desc p {
+        border-bottom: 0;
+      }
+    }
+
+    a {
+      @include display(flex);
+      @include flex-direction(row);
+
+      div {
+        &.event-icn {
+          margin-right: 30px;
+          min-width: 72px;
+          height: 72px;
+          border-radius: 50%;
+          @include display(flex);
+          @include justify-content(center);
+          @include align-items(center);
+
+          &__blue {
+            background-color: $blue;
+          }
+
+          &__yellow {
+            background-color: $yellow;
+          }
+
+          &__orange {
+            background-color: $orange;
+          }
+
+          &__green {
+            background-color: $green;
+          }
+
+          &__purple {
+            background-color: $purple;
+          }
+
+          img {
+            width: auto;
+            height: 40px;
+          }
+        }
+
+        &.event-desc {
+          h2 {
+            margin-bottom: 20px;
+            color: $black;
+          }
+
+          span.event-date {
+            color: lighten($black, 60%);
+          }
+
+          p {
+            margin-top: 6px;
+            border-bottom-width: 1px;
+            border-bottom-style: solid;
+            border-bottom-color: rgba(0,0,0,.1);
+            color: $black;
+
+            &:last-child {
+              padding-bottom: 40px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,55 @@
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Roboto Regular'), local('Roboto-Regular'), url("../fonts/Roboto/Roboto-Regular.ttf") format('truetype');
+}
+
+@font-face {
+  font-family: 'Roboto Mono';
+  font-style: normal;
+  font-weight: 400;
+  src: local('RobotoMono Regular'), local('RobotoMono-Regular'), url("../fonts/Roboto_Mono/RobotoMono-Regular.ttf") format('truetype');
+}
+
+@font-face {
+  font-family: 'Roboto Mono';
+  font-style: normal;
+  font-weight: 300;
+  src: local('RobotoMono Light'), local('RobotoMono-Light'), url("../fonts/Roboto_Mono/RobotoMono-Light.ttf") format('truetype');
+}
+
+$light: 300;
+$regular: 400;
+$bold: 700;
+$ultra-bold: 900;
+
+$base-font-family: 'Roboto', sans-serif;
+$base-font-style: normal;
+$base-font-weight: $regular;
+$base-font-size: em(14px);
+
+h1 {
+  font-family: 'Roboto Mono', monospace;
+  font-size: em(24px);
+  font-weight: $regular;
+  letter-spacing: 1px;
+  line-height: 28px;
+  color: $white;
+}
+
+h2 {
+  font-family: 'Roboto Mono', monospace;
+  font-size: em(24px);
+  font-weight: $regular;
+  letter-spacing: 1px;
+}
+
+p {
+  line-height: 1.8;
+}
+
+a {
+  text-decoration: none;
+  @include transition-duration(.2s);
+}
