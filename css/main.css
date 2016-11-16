@@ -215,10 +215,13 @@ nav {
   color: #FFFFFF;
   text-transform: uppercase;
   z-index: 9999; }
-  nav a {
-    line-height: 54px;
-    vertical-align: middle;
-    color: #FFFFFF; }
+  nav .content {
+    padding-right: 30px;
+    padding-left: 30px; }
+    nav .content a {
+      line-height: 54px;
+      vertical-align: middle;
+      color: #FFFFFF; }
   nav .shadow {
     display: none; }
 
