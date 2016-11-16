@@ -7,10 +7,14 @@ nav {
   text-transform: uppercase;
   z-index: 9999;
 
-  a {
-    line-height: 54px;
-    vertical-align: middle;
-    color: $white;
+  .content {
+    @include padding(null 30px null 30px);
+
+    a {
+      line-height: 54px;
+      vertical-align: middle;
+      color: $white;
+    }
   }
 
   .shadow {
