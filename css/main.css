@@ -184,8 +184,8 @@ a {
           background-position: center center; }
         .main .grid-50 a .grid-content__about {
           background-color: transparent;
-          background-image: url("../images/about.png");
-          background-size: cover;
+          background-image: url("../images/gdg_coimbra.png");
+          background-size: 60% auto;
           background-position: center center;
           color: #FFFFFF; }
         .main .grid-50 a .grid-content h2 {

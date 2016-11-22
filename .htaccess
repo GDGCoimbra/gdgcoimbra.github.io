@@ -1,0 +1,62 @@
+# SET DOMAIN PATHS
+RewriteEngine On
+RewriteRule     ^home/?$                  index.html                [NC,L]
+RewriteRule     ^events/?$                events.html               [NC,L]
+ErrorDocument 404 /404/
+
+# SET EXPIRES HEADERS
+# <FilesMatch ".(pdf|png|jpg|svg|js|css)$">
+#  Header set Expires "Thu, 15 Jan 2015 20:00:00 GMT"
+# </FilesMatch>
+
+# SET THE CACHE-CONTROL MAX-AGE
+<FilesMatch ".(pdf|png|jpg|svg)$">
+  Header set Cache-Control "max-age=2628000, public"
+</FilesMatch>
+
+<FilesMatch ".(html|css|js)$">
+  Header set Cache-Control "max-age=604800, public"
+</FilesMatch>
+
+<FilesMatch ".(ttf)$">
+  Header set Cache-Control "max-age=31536000, public"
+</FilesMatch>
+
+# TURN OFF THE ETAGS
+Header unset ETag
+FileETag None
+
+# TURN OFF THE LAST MODIFIED HEADER
+<FilesMatch ".(pdf|png|jpg|svg|js|css)$">
+  Header unset Last-Modified
+</FilesMatch>
+
+# ENABLE MOD_DEFLATE
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html
+  AddOutputFilterByType DEFLATE text/css
+  AddOutputFilterByType DEFLATE text/javascript
+  AddOutputFilterByType DEFLATE text/xml
+  AddOutputFilterByType DEFLATE text/plain
+  AddOutputFilterByType DEFLATE image/x-icon
+  AddOutputFilterByType DEFLATE image/svg+xml
+  AddOutputFilterByType DEFLATE application/rss+xml
+  AddOutputFilterByType DEFLATE application/javascript
+  AddOutputFilterByType DEFLATE application/x-javascript
+  AddOutputFilterByType DEFLATE application/xml
+  AddOutputFilterByType DEFLATE application/xhtml+xml
+  AddOutputFilterByType DEFLATE application/x-font
+  AddOutputFilterByType DEFLATE application/x-font-truetype
+  AddOutputFilterByType DEFLATE application/x-font-ttf
+  AddOutputFilterByType DEFLATE application/x-font-otf
+  AddOutputFilterByType DEFLATE application/x-font-opentype
+  AddOutputFilterByType DEFLATE application/vnd.ms-fontobject
+  AddOutputFilterByType DEFLATE font/ttf
+  AddOutputFilterByType DEFLATE font/otf
+  AddOutputFilterByType DEFLATE font/opentype
+
+  # OLD BROWSERS
+  BrowserMatch ^Mozilla/4 gzip-only-text/html
+  BrowserMatch ^Mozilla/4\.0[678] no-gzip
+  BrowserMatch \bMSIE !no-gzip !gzip-only-text/html
+</IfModule>
