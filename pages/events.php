@@ -26,7 +26,7 @@
       <div class="grid-content">
         <ol class="events">
           <li>
-            <a href="https://devfest.gdgcoimbra.xyz/" target="_blank">
+            <a href="https://devfest2016.gdgcoimbra.xyz/" target="_blank">
               <div class="event-icn event-icn__blue">
                 <img src="images/events/event.svg" alt="Event" />
               </div>
