@@ -30,7 +30,7 @@
     </div>
 
     <div class="grid-50 grid-orange">
-      <a href="https://developers.google.com/groups/chapter/103689036662302611912/" target="_blank">
+      <a href="https://www.meetup.com/GDG-Coimbra/" target="_blank">
         <div class="grid-content grid-content__follow">
           <h2>Become a member</h2>
           <p>Become a member by clicking on the "I'm a member" button directly at the official Google Developer page!</p>
